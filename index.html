@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India State Birds WebGIS</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<link rel="stylesheet" href="bird.css">
+
+</head>
+
+<body>
+
+<div id="header">
+
+<div class="title-bar">
+
+<a href="https://www.bnhs.org/" target="_blank">
+<img src="Images/hornbill.png" class="title-bird">
+</a>
+
+<h1 class="rainbow-title">India State Birds Atlas - Interactive WebGIS</h1>
+
+<a href="https://www.bnhs.org/" target="_blank">
+<img src="Images/hornbill.png" class="title-bird">
+</a>
+
+</div>
+
+<input type="text" id="searchBox" placeholder="Search State">
+
+</div>
+
+
+<div id="container">
+
+<!-- SIDEBAR -->
+
+<div id="sidebar">
+
+<h3>Select State Bird</h3>
+
+<select id="stateDropdown">
+<option value="">Select State</option>
+</select>
+<h3>Filter Birds</h3>
+
+<select id="iucnFilter">
+
+<option value="">All Birds</option>
+
+<option value="LC">Least Concern</option>
+
+<option value="NT">Near Threatened</option>
+
+<option value="VU">Vulnerable</option>
+
+<option value="EN">Endangered</option>
+
+<option value="CR">Critically Endangered</option>
+
+</select>
+
+<h3>Bird Gallery</h3>
+
+<div id="birdGallery"></div>
+<!-- BNHS Reference & Collection -->
+
+<div class="collectionCard">
+
+<h3>BNHS Reference & Collection</h3>
+
+<ul>
+
+<li>🐘 Mammals – 20,000</li>
+
+<li>🦜 Birds – 30,000</li>
+
+<li>🥚 Bird Eggs – 5,500</li>
+
+<li>🐍 Reptiles – 7,250</li>
+
+<li>🐸 Amphibians – 5,250</li>
+
+<li>🐟 Fish – 2,000</li>
+
+<li>🦋 Insects – 70,000</li>
+
+<li>🕷 Scorpions & Spiders – 579</li>
+
+<li>🪱 Other Invertebrates – 10,000</li>
+
+</ul>
+
+<p class="collectionNote">
+Specimens Preserved For Biodiversity Research & Taxonomy.
+</p>
+
+</div>
+</div>
+
+
+<!-- MAP -->
+
+<div id="map">
+<!-- Flying Birds Animation -->
+
+<div class="bird bird1"><img src="Images/flyingbird.png"></div>
+<div class="bird bird2"><img src="Images/flyingbird.png"></div>
+<div class="bird bird3"><img src="Images/flyingbird.png"></div>
+<div class="bird bird4"><img src="Images/flyingbird.png"></div>
+<div class="bird bird5"><img src="Images/flyingbird.png"></div>
+</div>
+<!-- BNHS PANEL -->
+
+<div id="bnhsPanel">
+
+<h3 class="bnhs-title">BNHS Resources</h3>
+
+<ul>
+
+<li>
+<a class="bnhs-btn" href="https://www.bnhs.org/membership-form" target="_blank">
+Join BNHS Membership
+</a>
+</li>
+
+<li>
+<a class="bnhs-btn" href="https://forms.gle/E6orRwnQ42bouxQT6" target="_blank">
+BNHS Visitor’s Form
+</a>
+</li>
+
+<li>
+<a class="bnhs-btn" href="https://forms.gle/3odUmwTvv8tek4Hx7" target="_blank">
+Specimen Deposition Application
+</a>
+</li>
+
+<li>
+<a class="bnhs-btn" href="https://docs.google.com/document/d/1jcKGONhGXNJOgr2I6cNqzcd_3B1vC8Zd/edit" target="_blank">
+Visitor & Research Access Guidelines
+</a>
+</li>
+
+<li>
+<a class="bnhs-btn" href="https://shop.bnhs.org/" target="_blank">
+BNHS Online Shop
+</a>
+</li>
+
+<li>
+<a class="bnhs-btn" href="https://www.bnhs.org/library" target="_blank">
+BNHS Digital Library
+</a>
+</li>
+
+<li>
+<a class="bnhs-btn" href="https://www.bnhs.org/publication" target="_blank">
+BNHS Publication
+</a>
+</li>
+
+<li>
+<a class="bnhs-btn" href="https://www.bnhs.org/envis" target="_blank">
+EIACP
+</a>
+</li>
+
+</ul>
+
+</div>
+
+
+<!-- LEGEND -->
+
+<div id="legend">
+
+<h3>IUCN Status</h3>
+
+<div><span class="lc"></span> LC - Least Concern</div>
+<div><span class="nt"></span> NT - Near Threatened</div>
+<div><span class="vu"></span> VU - Vulnerable</div>
+<div><span class="en"></span> EN - Endangered</div>
+<div><span class="cr"></span> CR - Critically Endangered</div>
+
+</div>
+
+</div>
+
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+
+<script src="bird.js"></script>
+
+
+<footer class="footer">
+
+Developed By <span class="rainbow">Harshal B. Jitakar</span>
+
+</footer>
+
+</body>
+
+</html>

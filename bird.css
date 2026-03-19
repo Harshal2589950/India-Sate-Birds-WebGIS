@@ -1,0 +1,746 @@
+
+body{
+margin:0;
+font-family:Arial;
+}
+
+/* HEADER */
+
+#header{
+height:60px;
+background: linear-gradient(90deg,#1abc9c,#3498db,#9b59b6);
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+color:white;
+}
+
+/* SEARCH BOX */
+
+#searchBox{
+position:absolute;
+right:20px;
+padding:6px;
+border-radius:6px;
+border:none;
+}
+
+/* LAYOUT */
+
+#container{
+display:flex;
+background:white;
+}
+
+/* SIDEBAR */
+
+#sidebar{
+
+width:230px;
+background:#ffffff;
+padding:10px;
+height:calc(100vh - 60px);
+overflow-y:auto;
+
+}
+
+/* MAP */
+
+#map{
+flex:1;
+height:calc(100vh - 10px);
+position:relative;
+}
+
+/* DROPDOWN */
+
+#stateDropdown{
+width:100%;
+padding:8px;
+margin-top:10px;
+border-radius:6px;
+}
+
+/* LEGEND */
+
+#legend{
+position:absolute;
+bottom:10px;
+right:35px;
+background:white;
+padding:12px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.4);
+z-index:1000;
+font-size:13px;
+}
+
+#legend span{
+
+display:inline-block;
+width:15px;
+height:15px;
+margin-right:6px;
+vertical-align:middle;
+
+}
+
+.lc{background:#60C659;}
+.nt{background:#CCE226;}
+.vu{background:#F9E814;}
+.en{background:#FC7F3F;}
+.cr{background:#D81E05;}
+
+/* CLEAN MARKER ICON */
+
+.leaflet-marker-icon{
+
+filter: drop-shadow(3px 6px 6px rgba(0,0,0,0.6));
+transition: transform 0.3s;
+
+}
+
+.leaflet-marker-icon:hover{
+
+transform: scale(1.25);
+z-index:1000;
+
+}
+
+/* STATE LABEL */
+
+.state-label{
+font-size:14px;
+font-weight:bold;
+color:#000;
+text-shadow:1px 1px 3px white;
+background:transparent;
+border:none;
+}
+
+/* POPUP CARD */
+
+.leaflet-popup-content-wrapper{
+border-radius:14px;
+width:300px;
+}
+
+.leaflet-popup-content{
+text-align:center;
+width:260px !important;
+}
+
+.popup-title{
+font-size:20px;
+font-weight:bold;
+color:#1b5e20;
+margin-bottom:8px;
+}
+
+.popup-text{
+font-size:14px;
+margin:4px 0;
+}
+
+.state{color:#1565c0;font-weight:bold;}
+.scientific{color:#8e24aa;font-style:italic;}
+.family{color:#ef6c00;}
+.iucn{color:#c62828;font-weight:bold;}
+.regional{color:#2e7d32;}
+
+.popup-img{
+width:150px;
+margin-top:10px;
+}
+
+/* POPUP BUTTON */
+
+.popup-btn{
+background:#e91e63;
+color:black;
+padding:9px 14px;
+border-radius:8px;
+text-decoration:none;
+display:inline-block;
+margin-top:12px;
+font-size:14px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.popup-btn:hover{
+background:#c2185b;
+transform:scale(1.05);
+}
+
+/* BIRD GALLERY */
+
+#birdGallery{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:8px;
+margin-top:10px;
+max-height:450px;
+overflow-y:auto;
+}
+
+.bird-card{
+background:white;
+border-radius:10px;
+padding:6px;
+text-align:center;
+cursor:pointer;
+transition:0.3s;
+border:1px solid #ddd;
+}
+
+.bird-card:hover{
+transform:scale(1.05);
+box-shadow:0 3px 10px rgba(0,0,0,0.2);
+}
+
+.bird-card img{
+width:60px;
+height:60px;
+object-fit:contain;
+}
+
+.bird-name{
+font-size:11px;
+font-weight:bold;
+margin-top:3px;
+}
+
+/* FOOTER */
+
+.footer{
+width:100%;
+background:#1f3d2b;
+color:white;
+text-align:center;
+padding:8px;
+font-size:15px;
+}
+
+/* RAINBOW NAME */
+
+.rainbow{
+font-weight:bold;
+background:linear-gradient(
+90deg,
+red,
+orange,
+yellow,
+green,
+cyan,
+blue,
+violet
+);
+background-size:300%;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:rainbowMove 4s linear infinite;
+}
+
+@keyframes rainbowMove{
+0%{background-position:0%}
+100%{background-position:300%}
+}
+
+/* TITLE BAR */
+
+.title-bar{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:20px;
+background:linear-gradient(90deg,#1e5799,#207cca,#2989d8);
+padding:10px;
+color:white;
+}
+
+.title-bar h1{
+margin:0;
+font-size:28px;
+}
+
+/* FLYING BIRD */
+
+.title-bird{
+width:45px;
+animation:flyBird 3s infinite ease-in-out;
+}
+
+@keyframes flyBird{
+0%{transform:translateY(0px)}
+50%{transform:translateY(-8px)}
+100%{transform:translateY(0px)}
+}
+
+/* RAINBOW TITLE */
+
+.rainbow-title{
+background:linear-gradient(
+90deg,
+red,
+orange,
+yellow,
+green,
+cyan,
+blue,
+violet
+);
+background-size:400%;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:rainbowMove 8s linear infinite;
+}
+
+/* BNHS PANEL */
+
+#bnhsPanel{
+background:linear-gradient(135deg,#ffecd2,#fcb69f);
+padding:15px;
+border-radius:12px;
+box-shadow:0 6px 15px rgba(0,0,0,0.3);
+margin:10px;
+width:230px;
+font-size:13px;
+}
+
+#bnhsPanel ul{
+list-style:none;
+padding:0;
+}
+
+#bnhsPanel li{
+margin-bottom:6px;
+}
+
+#bnhsPanel a{
+display:block;
+background:white;
+padding:8px 10px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+color:#2c3e50;
+transition:0.3s;
+}
+
+#bnhsPanel a:hover{
+background:#0072ff;
+color:white;
+transform:translateX(6px);
+}
+#bnhsPanel h3{
+
+text-align:center;
+
+font-size:18px;
+
+font-weight:bold;
+
+margin-bottom:12px;
+
+/* colorful text */
+
+background: linear-gradient(
+90deg,
+red,
+orange,
+yellow,
+green,
+cyan,
+blue,
+violet
+);
+
+background-size:400%;
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+animation:bnhsRainbow 20s linear infinite;
+
+}
+
+@keyframes bnhsRainbow{
+
+0%{
+background-position:0%;
+}
+
+100%{
+background-position:400%;
+}
+
+}
+/* IUCN TITLE ANIMATION */
+
+#legend h3{
+
+text-align:center;
+
+font-weight:bold;
+
+margin-bottom:8px;
+
+background: linear-gradient(
+90deg,
+red,
+orange,
+yellow,
+green,
+cyan,
+blue,
+violet
+);
+
+background-size:400%;
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+animation:iucnRainbow 20s linear infinite;
+
+}
+
+@keyframes iucnRainbow{
+
+0%{background-position:0%}
+
+100%{background-position:400%}
+
+}
+
+
+/* LEGEND ITEMS */
+
+#legend div{
+
+display:flex;
+
+align-items:center;
+
+margin-bottom:4px;
+
+font-weight:bold;
+
+}
+
+
+/* COLOR BOX ANIMATION */
+
+#legend span{
+
+display:inline-block;
+
+width:15px;
+
+height:15px;
+
+margin-right:6px;
+
+border-radius:3px;
+
+animation:blinkColor 50s infinite;
+
+}
+
+@keyframes blinkColor{
+
+0%{transform:scale(1)}
+
+50%{transform:scale(1.2)}
+
+100%{transform:scale(1)}
+
+}
+/* Sidebar Animated Titles Center */
+
+#sidebar h3{
+
+text-align:center;
+
+font-size:22px;
+font-weight:bold;
+
+background: linear-gradient(
+90deg,
+red,
+orange,
+yellow,
+green,
+cyan,
+blue,
+violet
+);
+
+background-size:400%;
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:sidebarRainbow 20s linear infinite;
+
+margin-bottom:10px;
+
+}
+
+/* animation speed slow */
+
+@keyframes sidebarRainbow{
+
+0%{
+background-position:0%;
+}
+
+100%{
+background-position:400%;
+}
+
+}
+.habitat{
+
+color:#2e7d32;
+
+font-weight:600;
+
+}
+#iucnFilter{
+
+width:100%;
+padding:6px;
+margin-bottom:10px;
+border-radius:6px;
+border:1px solid #ccc;
+
+}
+.collectionCard{
+
+width:100%;
+box-sizing:border-box;
+background:linear-gradient(135deg,#e8f5e9,#f1f8e9);
+padding:10px;
+margin-top:10px;
+border-radius:10px;
+box-shadow:0 0 8px rgba(0,0,0,0.2);
+
+}
+
+.collectionCard h3{
+
+font-size:13px;
+color:#2e7d32;
+text-align:center;
+margin-bottom:6px;
+
+}
+.collectionCard{
+
+background:linear-gradient(135deg,#e8f5e9,#f1f8e9);
+padding:10px;
+margin-top:10px;
+border-radius:10px;
+box-shadow:0 0 8px rgba(0,0,0,0.2);
+
+}
+.collectionCard ul{
+
+list-style:none;
+padding-left:0;
+text-align:center;
+
+}
+.collectionCard li{
+
+font-size:12px;
+margin-bottom:5px;
+padding:5px;
+border-radius:6px;
+font-weight:700;
+
+}
+.collectionNote{
+
+font-weight:bold;
+font-size:14px;
+text-align:center;
+margin-top:6px;
+color: #660099;
+
+}
+.collectionCard li:nth-child(1){
+background:#ffe0e0;
+}
+
+.collectionCard li:nth-child(2){
+background:#e3f2fd;
+}
+
+.collectionCard li:nth-child(3){
+background:#fff3cd;
+}
+
+.collectionCard li:nth-child(4){
+background:#e8f5e9;
+}
+
+.collectionCard li:nth-child(5){
+background:#d1ecf1;
+}
+
+.collectionCard li:nth-child(6){
+background:#e0f7fa;
+}
+
+.collectionCard li:nth-child(7){
+background:#fce4ec;
+}
+
+.collectionCard li:nth-child(8){
+background:#ede7f6;
+}
+
+.collectionCard li:nth-child(9){
+background:#f3e5f5;
+}
+.collectionCard li:hover{
+
+transform:scale(1.03);
+transition:0.2s;
+
+}
+/* MOBILE RESPONSIVE */
+
+@media (max-width:768px){
+
+#container{
+flex-direction:column;
+}
+
+#sidebar{
+width:100%;
+height:40vh;
+overflow-y:auto;
+}
+
+#map{
+width:100%;
+height:60vh;
+}
+
+#birdGallery{
+grid-template-columns:repeat(2,1fr);
+}
+
+.title-bird{
+display:none;
+}
+
+}
+/* MULTIPLE FLYING BIRDS */
+
+.bird{
+position:absolute;
+z-index:1000;
+}
+
+.bird img{
+width:150px;
+pointer-events:none;
+}
+
+/* BIRD 1 */
+
+.bird1{
+top:200px;
+left:-100px;
+animation:fly1 18s linear infinite;
+}
+
+@keyframes fly1{
+
+0%{left:-100px; top:250px;}
+
+50%{top:180px;}
+
+100%{left:110%; top:230px;}
+
+}
+
+/* BIRD 2 */
+
+.bird2{
+top:300px;
+left:-120px;
+animation:fly2 22s linear infinite;
+}
+
+@keyframes fly2{
+
+0%{left:-120px; top:320px;}
+
+50%{top:260px;}
+
+100%{left:110%; top:300px;}
+
+}
+
+/* BIRD 3 */
+
+.bird3{
+top:150px;
+left:-150px;
+animation:fly3 25s linear infinite;
+}
+
+@keyframes fly3{
+
+0%{left:-150px; top:180px;}
+
+50%{top:120px;}
+
+100%{left:110%; top:160px;}
+
+}
+
+/* BIRD 4 */
+
+.bird4{
+top:400px;
+left:-140px;
+animation:fly4 20s linear infinite;
+}
+
+@keyframes fly4{
+
+0%{left:-140px; top:420px;}
+
+50%{top:360px;}
+
+100%{left:110%; top:390px;}
+
+}
+
+/* BIRD 5 */
+
+.bird5{
+top:100px;
+left:-160px;
+animation:fly5 24s linear infinite;
+}
+
+@keyframes fly5{
+
+0%{left:-160px; top:120px;}
+
+50%{top:70px;}
+
+100%{left:110%; top:110px;}
+
+}
